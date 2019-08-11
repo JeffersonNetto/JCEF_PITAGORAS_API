@@ -41,7 +41,7 @@ namespace WebApiCoreMongoDb.Services
                         {"senderPhone", dados.NumeroTelefone},
                         {"senderEmail", dados.ambiente == 1 ? "c09627948019150314322@sandbox.pagseguro.com.br" : dados.Email},
                         {"shippingAddressRequired", "false"},
-                        {"redirectURL", "http://www.jcefpitagoras.com.br" },
+                        {"redirectURL", "http://jcefpitagoras.com.br" },
                     };
 
                 //String que receberá o XML de retorno.
@@ -136,7 +136,7 @@ namespace WebApiCoreMongoDb.Services
     public class Dados
     {
         //token renata 
-        public int ambiente = 2; //1 = Sandbox // 2 = Produção
+        public int ambiente = 1; //1 = Sandbox // 2 = Produção
         // Seus dados de acesso ao PagSeguro
         public string MeuEmail { get; set; }
         public string MeuToken { get; set; }
@@ -157,11 +157,10 @@ namespace WebApiCoreMongoDb.Services
         public string uriConsulta { get; set; }
         public Dados()
         {
-            //MeuEmail = "jeffersonneto_9@hotmail.com";
-            MeuToken = ambiente == 1 ? "11EDBFDB9DC1468E9D77FB150ECB8F35" : "3151f83d-167a-4ad0-a939-42ffeff6db808daf5c5049d3b80270e724bb532858b7d84a-902e-4bb1-9c65-279b7efb01a3";
-            MeuEmail = "renanmarti@hotmail.com";
-            //MeuToken = ambiente == 1 ? "EEFF8D4BBB2C489A96839180BA6B547E" : "98270D71E98B4CED8AB45F15A2CD6A5B";
-            TituloPagamento = "I Jornada Cientifica da Educação Fisica";
+            MeuEmail = ambiente == 1 ? "jeffersonneto_9@hotmail.com" : "rafaelsrodrigues1984@gmail.com";
+            MeuToken = ambiente == 1 ? "11EDBFDB9DC1468E9D77FB150ECB8F35" : "8f5fcce7-bbb7-48cb-919d-9e673531af1fd22650bf44be87cf38655fc46babbc354618-43d5-47b0-b725-1f1a0923131f";
+            
+            TituloPagamento = "I Jornada Cientifica da Educacao Fisica";
             uriCheckout = ambiente == 1 ? "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout" : "https://ws.pagseguro.uol.com.br/v2/checkout";
             urlPagamento = ambiente == 1 ? "https://sandbox.pagseguro.uol.com.br/v2/checkout/payment.html?code=" : "https://pagseguro.uol.com.br/v2/checkout/payment.html?code=";
             uriConsulta = ambiente == 1 ? "https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/" : "https://ws.pagseguro.uol.com.br/v3/transactions/";
