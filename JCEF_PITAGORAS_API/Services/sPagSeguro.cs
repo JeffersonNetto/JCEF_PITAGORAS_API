@@ -157,8 +157,8 @@ namespace WebApiCoreMongoDb.Services
         public string uriConsulta { get; set; }
         public Dados()
         {
-            MeuEmail = ambiente == 1 ? "jeffersonneto_9@hotmail.com" : "rafaelsrodrigues1984@gmail.com";
-            MeuToken = ambiente == 1 ? "11EDBFDB9DC1468E9D77FB150ECB8F35" : "8f5fcce7-bbb7-48cb-919d-9e673531af1fd22650bf44be87cf38655fc46babbc354618-43d5-47b0-b725-1f1a0923131f";
+            MeuEmail = ambiente == 1 ? "jeffersonneto_9@hotmail.com" : "";
+            MeuToken = ambiente == 1 ? "11EDBFDB9DC1468E9D77FB150ECB8F35" : "";
             
             TituloPagamento = "I Jornada Cientifica da Educacao Fisica";
             uriCheckout = ambiente == 1 ? "https://ws.sandbox.pagseguro.uol.com.br/v2/checkout" : "https://ws.pagseguro.uol.com.br/v2/checkout";
